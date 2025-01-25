@@ -14,10 +14,44 @@ import { FaRegCalendar } from "react-icons/fa";
 const { blog_folder, pagination } = config.settings;
 
 const people = [
-  { image: '/images/team/eugenia.jpg', bio: 'Are Developer and recently started your own business Already made website to ensure presence wants to develop.' },
-  { image: '/images/team/andreina.jpg', bio: 'Are Developer and recently started your own business Already made website to ensure presence wants to develop.' },
-  { image: '/images/team/patricia.jpg', bio: 'Are Developer and recently started your own business Already made website to ensure presence wants to develop.' },
-  { image: '/images/team/felipe.jpg', bio: 'Are Developer and recently started your own business Already made website to ensure presence wants to develop.' },
+  { 
+    id: 1,
+    image: '/images/team/eugenia.jpg', 
+    name:'Eugenia Esté' ,
+    bio: [
+      'es comunicadora social, diseñadora gráfica y antropóloga; tiene el título de experto en gestión cultural de la Fundación Contemporánea y diplomado en responsabilidad social corporativa de Universidad Simón Bolívar.',
+      'Ha asesorado diversas empresas diseñando e implementando proyecto de cultura, ciencia y comunidad.',
+      'Disfrutar del arte, cocinar para los amigos y viajar son sus grandes pasiones. Eugenia eventualmente escribe relatos para leer en voz alta.',
+    ]
+  },
+  { 
+    id: 2,
+    name:'Andreina Mujica' ,
+    image: '/images/team/andreina.jpg', 
+    bio: [
+      'es periodista y fotógrafa. Estudió Letras en la Universidad Central de Venezuela y un Máster en Periodismo de investigación en la UCAB. Tiene el título de experto en gestión cultural de la Fundación Contemporánea.',
+      'Trabajó como docente de fotoperiodismo en la UCV y la UCAB y ha sido galardonada por la Agencia de prensa extranjera en París con el premio “La otra mirada” por sus trabajos sobre festivales de cine en Biarritz y Cannes.',
+      'Andreina es fundadora y directora del proyecto Somos Caravana. Estudió y trabajó como chef de cocina en París y adora cocinar para amigos y familiares, o compartir una buena copa de vino. Camina las calles de Madrid cazando imágenes de perros de todas las razas y tamaños.',
+    ]  },
+  { 
+    id: 3,
+    name:'Patricia Mendosa' ,
+    image: '/images/team/patricia.jpg', 
+    bio: [
+      'es investigadora, gestora cultural y curadora de proyectos expositivos,educativos y editoriales.',
+      'Tiene un diploma de estudios avanzados de Arte y Pensamiento de la Universitat de Barcelona y el diploma de experto en gestión culutral de la Fundación Contemporánea.',
+      'Fue directora de la Sala Mendoza en Caracas desde el 2010 hasta el año 2022; y profesora de psicología del arte en la Escuela de Arte de la UCV hasta el 2018.',
+      'Patricia es una lectora voraz, viajera incansable y militante de los quesos y el vino.'
+    ]  },
+  { 
+    id: 4,
+    name:'Felipe Vargas' ,
+    image: '/images/team/felipe.jpg', 
+    bio: [
+      'es ingeniero informático y desarrollador de software.Asesora empresas globales en Canadá, Gran Bretaña y Ecuador.',
+      'En su tiempo libre devora reportes sobre inteligencia artificial y ensayos de machine learning.',
+      'Felipe adora los tejidos artesanales y siente profunda admiración por los productos agrícolas de pequeñas granjas. Quizás porque nació y creció entre cañaverales en su querida y añorada Venezuela.',
+    ]  },
   // Agrega más personas aquí
 ];
 
@@ -38,7 +72,7 @@ const Home = ({
 
   return (
     <Base>
-<section className="section banner w-full h-screen relative" style={{border: "1px solid blue"}}>
+<section className="section banner w-full h-screen relative">
 {/* Contenido de la sección */}
   <img src="/images/header_fabuladot_desk.jpg" className="w-full h-full max-w-full max-h-full object-cover  absolute top-0 left-0" />
 </section>
@@ -102,10 +136,10 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
       {/* </section> */}
 
       {/* Home main */}
-      <section className="section">
+      {/* <section className="section">
         <div className="container">
           <div className="row items-start">
-            <div className="mb-12 lg:mb-0 lg:col-8">
+            <div className="mb-12 lg:mb-0 lg:col-8"> */}
               {/* Featured posts */}
               {/* {featured_posts.enable && (
                 <div className="section">
@@ -190,25 +224,42 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
                 totalPages={Math.ceil(posts.length / showPosts)}
                 currentPage={1}
               /> */}
-            </div>
+            {/* </div> */}
             {/* sidebar */}
             {/* <Sidebar
               className={"lg:mt-[9.5rem]"}
               posts={posts}
               categories={categories}
             /> */}
-          </div>
+          {/* </div>
         </div>
-      </section>
+      </section> */}
       <section className="section">
         <div className="container mx-auto px-4 "  style={{backgroundColor: "#f7f7f7"}}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
-        {people.map((person, index) => (
+        {people.map((person) => (
           // <PersonCard key={index} image={person.image} bio={person.bio} />
-          <div key={index} className="bg-transparent overflow-hidden">
+          <div key={person.id} className="bg-transparent overflow-hidden">
             <img src={person.image} alt="Person" className="w-full sm:h-20 object-cover" />
             <div className="p-4">
-              <p className="text-gray-700" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'10px'}}>{person.bio}</p>
+              {person.bio.map((bio, index) => {
+                if(index === 0) {
+                  return (
+                    <p key={index} className="text-gray-700" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'10px'}}>
+                      <span className="font-bold">{person.name}</span> {bio}
+                    </p>
+                  )
+                }else{
+                  return (
+                    <p key={index} className="text-gray-700" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'10px'}}>
+                      {bio}
+                    </p>)
+                }
+              }
+              
+              )
+
+              }
             </div>
         </div>
         ))}
