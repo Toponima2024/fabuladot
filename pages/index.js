@@ -13,6 +13,45 @@ import Link from "next/link";
 import { FaRegCalendar } from "react-icons/fa";
 const { blog_folder, pagination } = config.settings;
 
+const comohacemos = [
+  {
+    id: 1,
+    title: "Escuchamos.",
+  },
+  {
+    id: 2,
+    title: "Ponemos atención a la calle, las tendencias,los clientes.",
+  },
+  {
+    id: 3,
+    title: "Investigamos.",
+  },
+  {
+    id: 4,
+    title: "Diseñamos ideas, historias, imágenes.",
+  },
+  {
+    id: 5,
+    title: "Articulamos redes y construimos democracia cultural.",
+  },
+  {
+    id: 6,
+    title: "Organizamos el equipo más eficiente y talentoso",
+  },
+  {
+    id: 7,
+    title: "Capturamos recursos.",
+  },
+  {
+    id: 8,
+    title: "Implementamos considerando tiempos y recursos.",
+  },
+  {
+    id: 9,
+    title: "Evaluamos.",
+  },
+]
+
 const people = [
   { 
     id: 1,
@@ -76,25 +115,46 @@ const Home = ({
       className="relative w-full h-screen sm:h-[50vh] bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/header_fabuladot_desk.jpg')",
-        backgroundSize: "contain",
+        backgroundSize: "cover",
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-center text-white px-4">
-          <h1 className="text-4xl sm:text-2xl font-bold mb-4">Welcome to Our Website</h1>
+
+    </div>
+    <section className="section relative bg-primary h-[40vh] mb-[20vh]">
+    <div className="absolute top-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 mx-auto max-h-[25vh] -translate-y-1/2 rounded-[18px] ">
+        <div className="text-white pt-5 pb-5">
           <p className="text-lg sm:text-sm mb-6">
-            Discover amazing content and explore the world with us.
+          <span className="font-bold block">Promover, divulgar y gestionar</span> 
+          <span className="font-bold block">la cultura.</span> 
+          <span className="font-bold block">Eso es lo que sabemos hacer</span> 
+          <span className="font-bold block">y lo hacemos muy bien.</span> 
           </p>
-          <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition">
-            Get Started
-          </button>
+          <div className="flex justify-center w-full">
+            <button className="px-3 py-1 bg-white hover:bg-gray-100 text-[#2A2D7D] font-medium rounded-lg transition">
+              Hablemos
+            </button>
+          </div>
         </div>
       </div>
+      <div className="absolute bottom-0 inset-x-0 bg-[#7ED956] bg-opacity-1 flex items-center justify-center w-4/5 mx-auto translate-y-1/2 rounded-[18px]">        
+  <div className="text-center text-white px-4">
+    <h6 className="text-4xl sm:text-2xl font-bold text-white mb-4">¿Cómo lo hacemos?</h6>
+    <div className="text-left">
+      <ul className="list-disc list-inside flex flex-col  items-start">
+        {
+          comohacemos.map((item) => (
+            <li key={item.id} className="text-sm sm:text-xs mb-2" style={{ paddingLeft: '1em', textIndent: '-1em', overflowWrap: 'break-word' }}>{item.title}</li>
+          ))
+        }
+      </ul>
     </div>
-<section className="section banner w-full h-screen relative">
+  </div>
+</div>
+    </section>
+{/* <section className="section banner w-full h-screen relative"> */}
 {/* Contenido de la sección */}
-  <img src="/images/header_fabuladot_desk.jpg" className="w-full h-full max-w-full max-h-full object-cover  absolute top-0 left-0" />
-</section>
+  {/* <img src="/images/header_fabuladot_desk.jpg" className="w-full h-full max-w-full max-h-full object-cover  absolute top-0 left-0" />
+</section> */}
 {/* <section className="section" style={{border: "1px solid red", display: "flex", justifyContent: "center"}}>
 <div className=" relative top-0 transform -translate-y-1/2" 
 style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', display: "flex", justifyContent: "center"}}>
@@ -259,7 +319,7 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
         {people.map((person) => (
           // <PersonCard key={index} image={person.image} bio={person.bio} />
           <div key={person.id} className="bg-transparent overflow-hidden">
-            <img src={person.image} alt="Person" className="w-full sm:h-20 object-cover" />
+            <img src={person.image} alt="Person" className="w-full  object-cover" />
             <div className="p-4">
               {person.bio.map((bio, index) => {
                 if(index === 0) {
