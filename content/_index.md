@@ -1,0 +1,27 @@
+---
+banner:
+  title: Welcome **!**
+  title_small: "to John Bravo's Blog"
+  content: Are Developer and recently started your own business Already made website to ensure presence wants to develop.
+  image_enable: false
+  image: /images/banner-author.png
+  button:
+    enable: false
+    label: Know About Me
+    link: /about
+    rel: ""
+
+featured_posts:
+  enable: false
+  title: Featured Posts
+
+promotion:
+  enable: false
+  image: /images/promotion.png
+  link: "#"
+
+recent_posts:
+  title: Recent Posts
+  enable: false
+
+---
