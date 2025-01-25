@@ -112,7 +112,7 @@ const Home = ({
   return (
     <Base>
         <div
-      className="relative w-full xl:h-screen h-[50vh] bg-cover bg-center"
+      className="relative w-full xl:h-[80vh] h-[50vh] bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/header_fabuladot_desk.jpg')",
         backgroundSize: "cover",
@@ -121,7 +121,7 @@ const Home = ({
 
     </div>
     <section className="section relative bg-primary h-[40vh] mb-[20vh]">
-    <div className="absolute top-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 mx-auto max-h-[25vh] -translate-y-1/2 rounded-[18px] ">
+    <div className="absolute top-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto max-h-[25vh] -translate-y-1/2 rounded-[18px] ">
         <div className="text-white pt-5 pb-5">
           <p className="text-lg sm:text-sm mb-6">
           <span className="font-bold block">Promover, divulgar y gestionar</span> 
@@ -136,7 +136,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 inset-x-0 bg-[#7ED956] bg-opacity-1 flex items-center justify-center w-4/5 mx-auto translate-y-1/2 rounded-[18px]">        
+      <div className="absolute bottom-0 inset-x-0 bg-[#7ED956] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto translate-y-1/2 rounded-[18px]">        
   <div className="text-center text-white px-4">
     <h6 className="text-2xl   font-bold text-white mt-2 mb-4">¿Cómo lo hacemos?</h6>
     <div className="text-left">
