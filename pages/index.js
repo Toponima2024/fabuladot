@@ -112,7 +112,7 @@ const Home = ({
   return (
     <Base>
         <div
-      className="relative w-full h-screen sm:h-[50vh] bg-cover bg-center"
+      className="relative w-full xl:h-screen h-[50vh] bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/header_fabuladot_desk.jpg')",
         backgroundSize: "cover",
