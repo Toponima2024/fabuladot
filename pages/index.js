@@ -72,6 +72,25 @@ const Home = ({
 
   return (
     <Base>
+        <div
+      className="relative w-full h-screen sm:h-[50vh] bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/images/header_fabuladot_desk.jpg')",
+        backgroundSize: "contain",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="text-center text-white px-4">
+          <h1 className="text-4xl sm:text-2xl font-bold mb-4">Welcome to Our Website</h1>
+          <p className="text-lg sm:text-sm mb-6">
+            Discover amazing content and explore the world with us.
+          </p>
+          <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
 <section className="section banner w-full h-screen relative">
 {/* Contenido de la sección */}
   <img src="/images/header_fabuladot_desk.jpg" className="w-full h-full max-w-full max-h-full object-cover  absolute top-0 left-0" />
