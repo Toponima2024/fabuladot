@@ -138,7 +138,7 @@ const Home = ({
       </div>
       <div className="absolute bottom-0 inset-x-0 bg-[#7ED956] bg-opacity-1 flex items-center justify-center w-4/5 mx-auto translate-y-1/2 rounded-[18px]">        
   <div className="text-center text-white px-4">
-    <h6 className="text-4xl sm:text-2xl font-bold text-white mb-4">¿Cómo lo hacemos?</h6>
+    <h6 className="text-2xl   font-bold text-white mt-2 mb-4">¿Cómo lo hacemos?</h6>
     <div className="text-left">
       <ul className="list-disc list-inside flex flex-col  items-start">
         {
