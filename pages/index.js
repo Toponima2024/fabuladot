@@ -143,7 +143,7 @@ const Home = ({
     >
 
     </div>
-    <section className="section relative bg-primary  h-[40vh] mb-[20vh]">
+    <section className="section relative bg-primary  h-[45vh] mb-[20vh]">
     <div className="absolute top-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto  -translate-y-1/2 rounded-[18px] pb-2">
         <div className="text-white ">
           <p className="text-lg sm:text-sm mb-6 mt-6">
