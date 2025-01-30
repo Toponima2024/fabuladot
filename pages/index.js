@@ -52,6 +52,29 @@ const comohacemos = [
   },
 ]
 
+const valores = [
+  {
+    id:1,
+    texto:"Creatividad",
+    img:"/images/valores/creatividad.png"
+  },
+  {
+    id:2,
+    texto:"Responsabilidad",
+    img:"/images/valores/responsable.png"
+  },
+  {
+    id:3,
+    texto:"Energía",
+    img:"/images/valores/energia.png"
+  },
+  {
+    id:4,
+    texto:"Conciencia ambiental",
+    img:"/images/valores/nube.png"
+  },
+]
+
 const people = [
   { 
     id: 1,
@@ -120,36 +143,61 @@ const Home = ({
     >
 
     </div>
-    <section className="section relative bg-primary h-[40vh] mb-[20vh]">
-    <div className="absolute top-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto max-h-[25vh] -translate-y-1/2 rounded-[18px] ">
-        <div className="text-white pt-5 pb-5">
-          <p className="text-lg sm:text-sm mb-6">
-          <span className="font-bold block">Promover, divulgar y gestionar</span> 
-          <span className="font-bold block">la cultura.</span> 
-          <span className="font-bold block">Eso es lo que sabemos hacer</span> 
-          <span className="font-bold block">y lo hacemos muy bien.</span> 
+    <section className="section relative bg-primary  h-[40vh] mb-[20vh]">
+    <div className="absolute top-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto  -translate-y-1/2 rounded-[18px] pb-2">
+        <div className="text-white ">
+          <p className="text-lg sm:text-sm mb-6 mt-6">
+          <span 
+            className="font-bold block"
+            style={{fontFamily:"Libre Baskerville", fontSize:'16px', lineHeight:'1.875' }}
+            
+          >Promover, divulgar y</span> 
+          <span 
+            className="font-bold block"
+            style={{fontFamily:"Libre Baskerville", fontSize:'16px', lineHeight:'1.875' }}
+            >gestionar la cultura.</span> 
+          <span 
+            className="font-bold block"
+            style={{fontFamily:"Libre Baskerville", fontSize:'16px', lineHeight:'1.875' }}
+            >Eso es lo que sabemos </span> 
+          <span 
+            className="font-bold block"
+            style={{fontFamily:"Libre Baskerville", fontSize:'16px', lineHeight:'1.875' }}
+            >hacer y lo hacemos</span> 
+          <span 
+            className="font-bold block"
+            style={{fontFamily:"Libre Baskerville", fontSize:'16px', lineHeight:'1.875' }}
+            >muy bien.</span> 
           </p>
-          <div className="flex justify-center w-full">
-            <button className="px-3 py-1 bg-white hover:bg-gray-100 text-[#2A2D7D] font-medium rounded-lg transition">
-              Hablemos
+          <div className="flex justify-center w-full mb-2">
+            <button 
+              className="px-3  bg-white hover:bg-gray-100 text-[#2A2D7D] font-bold rounded-full transition"
+              style={{fontFamily:"Lato", fontSize:'12px', lineHeight:'2.5', }}
+              >
+              Hablemos 
             </button>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 inset-x-0 bg-[#7ED956] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto translate-y-1/2 rounded-[18px]">        
-  <div className="text-center text-white px-4">
-    <h6 className="text-2xl   font-bold text-white mt-2 mb-4">¿Cómo lo hacemos?</h6>
-    <div className="text-left">
-      <ul className="list-disc list-inside flex flex-col  items-start">
-        {
-          comohacemos.map((item) => (
-            <li key={item.id} className="text-sm sm:text-xs mb-2" style={{ paddingLeft: '1em', textIndent: '-1em', overflowWrap: 'break-word' }}>{item.title}</li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
-</div>
+      <div className="absolute bottom-0 inset-x-0 bg-[#7ED956] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto translate-y-1/2 rounded-[18px] pb-2">        
+        <div className="text-center text-white px-4">
+          <h6 className="text-2xl   font-bold text-white mt-2 mb-4"
+            style={{fontFamily:"Lato", fontSize:'16px', lineHeight:'1.667', fontWeight:'bold' }}
+
+          >¿Cómo lo hacemos?</h6>
+          <div className="text-left">
+            <ul className="list-disc list-inside flex flex-col  items-start">
+              {
+                comohacemos.map((item) => (
+                  <li key={item.id} className="text-sm sm:text-xs mb-2" 
+                  style={{ fontFamily:"Libre Baskerville",  fontSize:'12px', paddingLeft: '1em', textIndent: '-1em', overflowWrap: 'break-word' }}
+                  >{item.title}</li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 {/* <section className="section banner w-full h-screen relative"> */}
 {/* Contenido de la sección */}
@@ -314,23 +362,27 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
         </div>
       </section> */}
       <section className="section">
-        <div className="container mx-auto px-4 "  style={{backgroundColor: "#f7f7f7"}}>
+        <div className="container mx-auto px-4 pt-3"  style={{backgroundColor: "#f7f7f7"}}>
+        <h2 
+                className="text-xl font-bold mb-4 ml-3"
+                style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
+              >Nuestro Equipo</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
         {people.map((person) => (
           // <PersonCard key={index} image={person.image} bio={person.bio} />
           <div key={person.id} className="bg-transparent overflow-hidden">
-            <img src={person.image} alt="Person" className="w-full  object-cover" />
-            <div className="p-4">
-              {person.bio.map((bio, index) => {
+            <img src={person.image} alt="Person" className="w-full sm:w-auto md:w-2/3  object-cover mx-auto block" />
+            <div className="w-full sm:w-auto md:w-2/3 mx-auto">
+            {person.bio.map((bio, index) => {
                 if(index === 0) {
                   return (
-                    <p key={index} className="text-gray-700" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'10px'}}>
+                    <p key={index} className="text-gray-700 mt-2" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'11px'}}>
                       <span className="font-bold">{person.name}</span> {bio}
                     </p>
                   )
                 }else{
                   return (
-                    <p key={index} className="text-gray-700" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'10px'}}>
+                    <p key={index} className="text-gray-700 mt-1" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'11px'}}>
                       {bio}
                     </p>)
                 }
@@ -343,7 +395,56 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
         </div>
         ))}
       </div>
-    </div>
+      </div>
+      </section>
+      <section className="section">
+      <div 
+            className="relative w-full   bg-cover bg-center bg-primary p-6"
+            style={{
+              backgroundImage: "url('/images/background.jpg')",
+              backgroundSize: "contain",
+              backgroundRepeat:"no-repeat"
+            }}
+      >        
+
+        <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden ">
+          <div className="p-6">
+              <h2 
+                className="text-xl font-bold mb-4 ml-3"
+                style={{fontFamily:"Lato", fontSize:'14px', lineHeight:'1.2'}}
+              >Nuestros valores</h2>
+              <ul>
+                {
+                  valores.map((valor) => (
+                    <li key={valor.id} className="flex flex-col-2 items-end">
+                    <p 
+                      className="text-gray-700 ml-5 mr-5"
+                      style={{fontFamily:"Libre Baskerville", fontSize:'12px', lineHeight:'2.333'}}
+                    >{valor.texto}</p>
+                    <img src={valor.img} alt="Imagen 1" className="w-8 h-8 mb-2" />
+                  </li>
+                  ))        
+                }
+              </ul>
+          </div>
+        </div>
+        <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-5 ">
+          <div className="p-6">
+              <h2 
+                className="text-xl font-bold mb-4 text-center"
+                style={{fontFamily:"Libre Baskerville", fontSize:'18px', lineHeight:'1.667'}}
+              >¿Tienes una idea para desarrollar o apoyar un proyecto cultural?</h2>
+              <div className="flex justify-center w-full">
+                <button 
+                  className="px-3  bg-[#2A2D7D] hover:bg-gray-100 text-white font-bold rounded-full transition"
+                  style={{fontFamily:'Lato', fontSize:'12px', lineHeight:'2.5'}}
+                >
+                  Hablemos
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
       </section>
     </Base>
   );
