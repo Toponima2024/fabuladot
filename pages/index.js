@@ -220,7 +220,7 @@ const Home = ({
     </div>
       <SectionInfo>
       <div className="mb-5 flex item-center justify-center" >
-        <div className="bg-[#2A2D7D] sm:max-w-fit max-w-[80%]  bg-opacity-1 text-white p-6 rounded-[18px] flex flex-col gap-2"
+        <div className="bg-[#2A2D7D]  md:w-[50vw] w-[100%] bg-opacity-1 text-white p-6 rounded-[18px] flex flex-col gap-2"
         >
           <p className="text-base"
               style={{ fontFamily: "Libre Baskerville" }}
@@ -232,18 +232,18 @@ const Home = ({
           >
             Eso es lo que sabemos hacer y lo hacemos muy bien.
           </p>
-          <div className="flex justify-center w-full mb-2">
+          <div className="flex justify-center w-full mb-2 mt-2">
             <button
-      className="bg-white hover:bg-gray-100 text-[#2A2D7D]  font-bold rounded-full transition  text-base  px-20 py-2"
-      style={{ fontFamily: "Lato"  }}
-            >
-              Hablemos
+              className="bg-white hover:bg-gray-100 text-[#2A2D7D]  font-bold rounded-full transition  text-base  px-20 py-2"
+              style={{ fontFamily: "Lato"  }}
+                    >
+                      Hablemos
             </button>
           </div>
         </div>
       </div>
       <div className="flex item-center justify-center" >
-        <div className="bg-[#6fac4e] sm:max-w-fit max-w-[80%] bg-opacity-1 text-white p-6 rounded-[18px] "
+        <div className="bg-[#6fac4e]   md:w-[50vw] w-[100%]  bg-opacity-1 text-white text-center p-6 rounded-[18px] "
         >
         <h6 id="how" className="text-2xl font-bold text-white mt-2 mb-4"
           style={{ fontFamily: "Lato",  fontWeight: 'bold' }}
