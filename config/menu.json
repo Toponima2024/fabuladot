@@ -3,7 +3,23 @@
     {
       "name": "Home",
       "url": "/"
-     }
+    },
+    {
+      "name": "¿Cómo lo hacemos?",
+      "url": "#how"
+    },
+    {
+      "name": "Nuestro Equipo",
+      "url": "#team"
+    },
+    {
+      "name": "Nuestros Valores",
+      "url": "#valores"
+    },
+    {
+      "name": "Contacto",
+      "url": "#contact"
+    }
   ],
   "footer": [
     {
@@ -11,8 +27,8 @@
       "url": "/"
     },
     {
-      "name": "Contact",
-      "url": "#"
+      "name": "Contacto",
+      "url": "#contact"
     },
     {
       "name": "Privacy Policy",

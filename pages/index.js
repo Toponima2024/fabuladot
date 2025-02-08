@@ -240,7 +240,7 @@ const Home = ({
       <div className="flex item-center justify-center" >
         <div className="bg-[#6fac4e] sm:max-w-fit max-w-[80%] bg-opacity-1 text-white p-6 rounded-[18px] "
         >
-        <h6 className="text-2xl font-bold text-white mt-2 mb-4"
+        <h6 id="how" className="text-2xl font-bold text-white mt-2 mb-4"
           style={{ fontFamily: "Lato",  fontWeight: 'bold' }}
         >
           ¿Cómo lo hacemos?
@@ -429,6 +429,7 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
 
                 <h2 
                     className="text-xl font-bold  text-center"
+                    id="team"
                     style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
                   >
                   Nuestro Equipo
@@ -490,7 +491,7 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
             className="relative w-full   bg-cover bg-center bg-primary p-6"
             style={{
               backgroundImage: "url('/images/background.jpg')",
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundRepeat:"no-repeat"
             }}
       >        
@@ -500,6 +501,7 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
     <p 
       className="text-xl font-bold mb-4 text-center"
       style={{fontFamily:"Lato"}}
+      id="valores"
     >
       Nuestros valores
     </p>

@@ -3,7 +3,7 @@ body.menu-open {
 }
 
 .header {
-  @apply fixed top-0 z-50 w-full border-b bg-[#B3E95C] py-[20px] dark:border-darkmode-border dark:bg-darkmode-body transition-transform duration-300;
+  @apply fixed top-0 z-50 w-full  bg-transparent py-[20px] dark:border-darkmode-border dark:bg-darkmode-body transition-transform duration-300;
 }
 
 .header-hidden {
@@ -12,7 +12,7 @@ body.menu-open {
 
 // navbar items
 .navbar {
-  @apply relative flex flex-wrap items-center justify-between;
+  @apply relative flex flex-wrap items-center justify-around;
 }
 
 .collapse-menu {
@@ -64,6 +64,11 @@ body.menu-open {
   &.active {
     @apply bg-primary/10 text-primary;
   }
+}
+
+// search style
+.menu-icon {
+  @apply inline-block h-10 w-10 cursor-pointer rounded-full bg-transparent p-2.5 text-xl text-white;
 }
 
 // search style
