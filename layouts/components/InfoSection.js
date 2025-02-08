@@ -48,22 +48,22 @@ const InfoSection = () => {
 
   {/* Primer div (arriba) */}
   <div className="container mx-auto mb-5 flex flex-col" >
-    <div className="bg-[#2A2D7D] bg-opacity-1 text-white p-6 rounded-[18px] flex flex-col gap-4"
+    <div className="bg-[#2A2D7D] bg-opacity-1 text-white p-6 rounded-[18px] flex flex-col gap-2"
     style={{width:'fit-content'}}
     >
-      <p className="lg:text-4xl md:text-2xl text-sm mb-2"
+      <p className="text-base"
           style={{ fontFamily: "Libre Baskerville" }}
       >
         Promover, divulgar y gestionar la cultura.
       </p>
-      <p className="lg:text-4xl md:text-2xl text-sm"
+      <p className="text-base"
           style={{ fontFamily: "Libre Baskerville" }}
       >
         Eso es lo que sabemos hacer y lo hacemos muy bien.
       </p>
       <div className="flex justify-center w-full mb-2">
         <button
-  className="bg-white hover:bg-gray-100 text-[#2A2D7D] font-bold rounded-full transition lg:text-4xl md:text-2xl px-20 py-2"
+  className="bg-white hover:bg-gray-100 text-[#2A2D7D] font-bold rounded-full transition  text-base  px-20 py-2"
   style={{ fontFamily: "Lato"  }}
         >
           Hablemos
@@ -87,8 +87,8 @@ const InfoSection = () => {
           {comohacemos.map((item) => (
             <li
               key={item.id}
-              className="text-sm sm:text-xs mb-2"
-              style={{ fontFamily: "Libre Baskerville", fontSize: '12px', paddingLeft: '1em', textIndent: '-1em', overflowWrap: 'break-word' }}
+              className="text-sm mb-2"
+              style={{ fontFamily: "Libre Baskerville", paddingLeft: '1em', textIndent: '-1.5em', overflowWrap: 'break-word' }}
             >
               {item.title}
             </li>
