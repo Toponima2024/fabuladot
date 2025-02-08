@@ -149,6 +149,11 @@ const Home = ({
         // Scroll up
         header.classList.remove('header-hidden');
       }
+      if(scrollTop != 0){
+        header.classList.add('bg-primary');
+      }else{
+        header.classList.remove('bg-primary');
+      }
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
     };
 
