@@ -2,7 +2,7 @@
   "site": {
     "title": "Fabuladot",
     "base_url": "/",
-    "favicon": "/images/favicon_fabuladot.ico",
+    "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_white": "/images/logo-light.png",
     "logo_width": "175",

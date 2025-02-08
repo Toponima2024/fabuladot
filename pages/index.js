@@ -11,6 +11,7 @@ import dateFormat from "@lib/utils/dateFormat";
 import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
+import { useEffect } from "react";
 import { FaRegCalendar } from "react-icons/fa";
 const { blog_folder, pagination } = config.settings;
 
@@ -46,7 +47,7 @@ const people = [
     name:'Eugenia Esté' ,
     bio: [
       'es comunicadora social, diseñadora gráfica y antropóloga; tiene el título de experto en gestión cultural de la Fundación Contemporánea y diplomado en responsabilidad social corporativa de Universidad Simón Bolívar.',
-      'Ha asesorado diversas empresas diseñando e implementando proyecto de cultura, ciencia y comunidad.',
+      'Ha asesorado diversas empresas diseñando e implementando proyectos de cultura, ciencia y comunidad.',
       'Disfrutar del arte, cocinar para los amigos y viajar son sus grandes pasiones. Eugenia eventualmente escribe relatos para leer en voz alta.',
     ]
   },
@@ -96,16 +97,82 @@ const Home = ({
   );
   const showPosts = pagination;
 
+  useEffect(() => {
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+
+    const onScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        // Scroll down
+        header.classList.add('header-hidden');
+      } else {
+        // Scroll up
+        header.classList.remove('header-hidden');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
     <Base>
         <div
-      className="relative w-full xl:h-[80vh] h-[50vh] bg-cover bg-center"
+      className="relative w-full xl:h-[80vh] h-[70vh] bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/header_fabuladot_desk.jpg')",
         backgroundSize: "cover",
       }}
     >
-
+          {/* <div className="absolute bottom-0 inset-x-0 bg-[#2A2D7D] bg-opacity-1 flex items-center justify-center w-3/4 xl:w-1/4 mx-auto translate-y-1/2 sm:translate-y-1/3 md:translate-y-1/4 lg:translate-y-1/5 rounded-[18px] pb-2 sm:pb-4 md:pb-6 lg:pb-8 z-10">        
+          <div className="text-white">
+              <p className="text-lg sm:text-sm mb-6 mt-6">
+                <span 
+                  className="font-bold block"
+                  style={{ fontFamily: "Libre Baskerville", fontSize: '16px', lineHeight: '1.875' }}
+                >
+                  Promover, divulgar y
+                </span> 
+                <span 
+                  className="font-bold block"
+                  style={{ fontFamily: "Libre Baskerville", fontSize: '16px', lineHeight: '1.875' }}
+                >
+                  gestionar la cultura.
+                </span> 
+                <span 
+                  className="font-bold block"
+                  style={{ fontFamily: "Libre Baskerville", fontSize: '16px', lineHeight: '1.875' }}
+                >
+                  Eso es lo que sabemos
+                </span> 
+                <span 
+                  className="font-bold block"
+                  style={{ fontFamily: "Libre Baskerville", fontSize: '16px', lineHeight: '1.875' }}
+                >
+                  hacer y lo hacemos
+                </span> 
+                <span 
+                  className="font-bold block"
+                  style={{ fontFamily: "Libre Baskerville", fontSize: '16px', lineHeight: '1.875' }}
+                >
+                  muy bien.
+                </span> 
+              </p>
+              <div className="flex justify-center w-full mb-2">
+                <button 
+                  className="px-3 bg-white hover:bg-gray-100 text-[#2A2D7D] font-bold rounded-full transition"
+                  style={{ fontFamily: "Lato", fontSize: '12px', lineHeight: '2.5' }}
+                >
+                  Hablemos
+                </button>
+              </div>
+            </div>
+          </div> */}
     </div>
       <InfoSection />
   
@@ -271,40 +338,67 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
           {/* </div>
         </div>
       </section> */}
-      <section className="section relative mt-[20vh] md:mt-[5vh]">
-        <div className="container mx-auto px-4 pt-3"  style={{backgroundColor: "#f7f7f7"}}>
-        <h2 
-                className="text-xl font-bold mb-4 ml-3"
-                style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
-              >Nuestro Equipo</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
-        {people.map((person) => (
-          // <PersonCard key={index} image={person.image} bio={person.bio} />
-          <div key={person.id} className="bg-transparent overflow-hidden">
-            <img src={person.image} alt="Person" className="w-full sm:w-auto md:w-2/3  object-cover mx-auto block" />
-            <div className="w-full sm:w-auto md:w-2/3 mx-auto">
-            {person.bio.map((bio, index) => {
-                if(index === 0) {
-                  return (
-                    <p key={index} className="text-gray-700 mt-2" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'11px'}}>
-                      <span className="font-bold">{person.name}</span> {bio}
-                    </p>
-                  )
-                }else{
-                  return (
-                    <p key={index} className="text-gray-700 mt-1" style={{fontFamily:'Libre Baskerville', color:'#2a2d7d', fontSize:'11px'}}>
-                      {bio}
-                    </p>)
-                }
-              }
-              
-              )
+      <section>
+        <div className="container mx-auto" >
+          <div className="flex flex-col  items-center justify-center mx-auto w-full sm:w-5/6 bg-[#f7f7f7] bg-opacity-1 rounded-[18px] ">
 
-              }
+            <h2 
+                className="text-xl font-bold  text-center"
+                style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
+              >
+              Nuestro Equipo
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2  p-4">
+              <div>
+                {people.filter((_, index) => index % 2 === 0).map((person) => (
+                  <div key={person.id} className="bg-transparent overflow-hidden mb-4">
+                    <img src={person.image} alt="Person" className="w-auto  object-cover mx-auto block p-3" />
+                    <div className="w-auto sm:w-auto mx-auto pl-5 pr-5">
+                      {person.bio.map((bio, index) => {
+                        if (index === 0) {
+                          return (
+                            <p key={index} className="text-gray-700 mt-2" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
+                              <span className="font-bold">{person.name}</span> {bio}
+                            </p>
+                          );
+                        } else {
+                          return (
+                            <p key={index} className="text-gray-700 mt-1" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
+                              {bio}
+                            </p>
+                          );
+                        }
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div>
+                {people.filter((_, index) => index % 2 !== 0).map((person) => (
+                  <div key={person.id} className="bg-transparent overflow-hidden mb-4">
+                    <img src={person.image} alt="Person" className="w-auto object-cover mx-auto block p-3" />
+                    <div className="w-auto sm:w-auto mx-auto pl-5 pr-5">
+                      {person.bio.map((bio, index) => {
+                        if (index === 0) {
+                          return (
+                            <p key={index} className="text-gray-700 mt-2" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
+                              <span className="font-bold">{person.name}</span> {bio}
+                            </p>
+                          );
+                        } else {
+                          return (
+                            <p key={index} className="text-gray-700 mt-1" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
+                              {bio}
+                            </p>
+                          );
+                        }
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-        </div>
-        ))}
-      </div>
+          </div>
       </div>
       </section>
       <section className="section">
@@ -317,27 +411,33 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
             }}
       >        
 
-        <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden ">
-          <div className="p-6">
-              <h2 
-                className="text-xl font-bold mb-4 ml-3"
-                style={{fontFamily:"Lato", fontSize:'14px', lineHeight:'1.2'}}
-              >Nuestros valores</h2>
-              <ul>
-                {
-                  valores.map((valor) => (
-                    <li key={valor.id} className="flex flex-col-2 items-end">
-                    <p 
-                      className="text-gray-700 ml-5 mr-5"
-                      style={{fontFamily:"Libre Baskerville", fontSize:'12px', lineHeight:'2.333'}}
-                    >{valor.texto}</p>
-                    <img src={valor.img} alt="Imagen 1" className="w-8 h-8 mb-2" />
-                  </li>
-                  ))        
-                }
-              </ul>
-          </div>
-        </div>
+<div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+  <div className="p-3">
+    <h2 
+      className="text-xl font-bold mb-4 text-center"
+      style={{fontFamily:"Lato", fontSize:'14px', lineHeight:'1.2'}}
+    >
+      Nuestros valores
+    </h2>
+    <ul style={{display:'flex', flexDirection:'column' ,alignItems:'center', justifyContent:'center'}}>
+      {
+        valores.map((valor) => (
+          <li key={valor.id} className="flex flex-col items-center mb-1" >
+            <div className="flex min-w-[175px] items-end justify-start">
+              <p 
+                className="text-gray-700 pr-1"
+                style={{fontFamily:"Libre Baskerville", fontSize:'12px', lineHeight:'2.333'}}
+              >
+                {valor.texto}
+              </p>
+              <img src={valor.img} alt="Imagen 1" className="w-8 h-8" />
+            </div>
+          </li>
+        ))        
+      }
+    </ul>
+  </div>
+</div>
         <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-5 ">
           <div className="p-6">
               <h2 

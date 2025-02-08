@@ -3,10 +3,11 @@ body.menu-open {
 }
 
 .header {
-  @apply top-0 z-50 border-b bg-body py-[20px] dark:border-darkmode-border dark:bg-darkmode-body;
-  background-image: url('/images/background.jpg');
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
-  background-position: center; /* Centra la imagen en el fondo */
+  @apply fixed top-0 z-50 w-full border-b bg-[#B3E95C] py-[20px] dark:border-darkmode-border dark:bg-darkmode-body transition-transform duration-300;
+}
+
+.header-hidden {
+  @apply -translate-y-full;
 }
 
 // navbar items
