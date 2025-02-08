@@ -3,6 +3,7 @@ import Base from "@layouts/Baseof";
 import ImageFallback from "@layouts/components/ImageFallback";
 import InfoSection from "@layouts/components/InfoSection";
 import Pagination from "@layouts/components/Pagination";
+import SectionTeam from "@layouts/components/SectionTeam";
 import Post from "@layouts/partials/Post";
 import Sidebar from "@layouts/partials/Sidebar";
 import { getListPage, getSinglePage } from "@lib/contentParser";
@@ -338,69 +339,67 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
           {/* </div>
         </div>
       </section> */}
-      <section>
-        <div className="container mx-auto" >
-          <div className="flex flex-col  items-center justify-center mx-auto w-full sm:w-5/6 bg-[#f7f7f7] bg-opacity-1 rounded-[18px] ">
+      <SectionTeam >
+            <div className="flex flex-col  items-center justify-center mx-auto w-full sm:w-5/6 bg-[#f7f7f7] bg-opacity-1 rounded-[18px] ">
 
-            <h2 
-                className="text-xl font-bold  text-center"
-                style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
-              >
-              Nuestro Equipo
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2  p-4">
-              <div>
-                {people.filter((_, index) => index % 2 === 0).map((person) => (
-                  <div key={person.id} className="bg-transparent overflow-hidden mb-4">
-                    <img src={person.image} alt="Person" className="w-auto  object-cover mx-auto block p-3" />
-                    <div className="w-auto sm:w-auto mx-auto pl-5 pr-5">
-                      {person.bio.map((bio, index) => {
-                        if (index === 0) {
-                          return (
-                            <p key={index} className="text-gray-700 mt-2" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
-                              <span className="font-bold">{person.name}</span> {bio}
-                            </p>
-                          );
-                        } else {
-                          return (
-                            <p key={index} className="text-gray-700 mt-1" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
-                              {bio}
-                            </p>
-                          );
-                        }
-                      })}
-                    </div>
+                <h2 
+                    className="text-xl font-bold  text-center"
+                    style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
+                  >
+                  Nuestro Equipo
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2  p-4">
+                  <div>
+                    {people.filter((_, index) => index % 2 === 0).map((person) => (
+                      <div key={person.id} className="bg-transparent overflow-hidden mb-4">
+                        <img src={person.image} alt="Person" className="2xl:w-3/4 w-auto object-cover mx-auto block p-3" />
+                        <div className="2xl:w-2/3 sm:w-auto mx-auto pl-5 2xl:pl-1 pr-5 2xl:pr-1">
+                          {person.bio.map((bio, index) => {
+                            if (index === 0) {
+                              return (
+                                <p key={index} className="text-sm mt-2" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d' }}>
+                                  <span className="text-sm font-bold">{person.name}</span> {bio}
+                                </p>
+                              );
+                            } else {
+                              return (
+                                <p key={index} className="text-sm  mt-1" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d' }}>
+                                  {bio}
+                                </p>
+                              );
+                            }
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <div>
-                {people.filter((_, index) => index % 2 !== 0).map((person) => (
-                  <div key={person.id} className="bg-transparent overflow-hidden mb-4">
-                    <img src={person.image} alt="Person" className="w-auto object-cover mx-auto block p-3" />
-                    <div className="w-auto sm:w-auto mx-auto pl-5 pr-5">
-                      {person.bio.map((bio, index) => {
-                        if (index === 0) {
-                          return (
-                            <p key={index} className="text-gray-700 mt-2" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
-                              <span className="font-bold">{person.name}</span> {bio}
-                            </p>
-                          );
-                        } else {
-                          return (
-                            <p key={index} className="text-gray-700 mt-1" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d', fontSize: '11px' }}>
-                              {bio}
-                            </p>
-                          );
-                        }
-                      })}
-                    </div>
+                  <div>
+                    {people.filter((_, index) => index % 2 !== 0).map((person) => (
+                      <div key={person.id} className="bg-transparent overflow-hidden mb-4">
+                        <img src={person.image} alt="Person" className="2xl:w-3/4 w-auto object-cover mx-auto block p-3" />
+                        <div className="2xl:w-2/3 sm:w-auto mx-auto pl-5 2xl:pl-1 pr-5 2xl:pr-1">
+                          {person.bio.map((bio, index) => {
+                            if (index === 0) {
+                              return (
+                                <p key={index} className="text-sm  mt-2" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d'  }}>
+                                  <span className=" text-sm  font-bold">{person.name}</span> {bio}
+                                </p>
+                              );
+                            } else {
+                              return (
+                                <p key={index} className="text-sm  mt-1" style={{ fontFamily: 'Libre Baskerville', color: '#2a2d7d'  }}>
+                                  {bio}
+                                </p>
+                              );
+                            }
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
             </div>
-          </div>
-      </div>
-      </section>
+      </SectionTeam>
       <section className="section">
       <div 
             className="relative w-full   bg-cover bg-center bg-primary p-6"
@@ -413,20 +412,20 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
 
 <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
   <div className="p-3">
-    <h2 
+    <p 
       className="text-xl font-bold mb-4 text-center"
-      style={{fontFamily:"Lato", fontSize:'14px', lineHeight:'1.2'}}
+      style={{fontFamily:"Lato"}}
     >
       Nuestros valores
-    </h2>
+    </p>
     <ul style={{display:'flex', flexDirection:'column' ,alignItems:'center', justifyContent:'center'}}>
       {
         valores.map((valor) => (
           <li key={valor.id} className="flex flex-col items-center mb-1" >
-            <div className="flex min-w-[175px] items-end justify-start">
+            <div className="flex min-w-[215px] items-end justify-start">
               <p 
-                className="text-gray-700 pr-1"
-                style={{fontFamily:"Libre Baskerville", fontSize:'12px', lineHeight:'2.333'}}
+                className="text-gray-700 pr-1 text-base"
+                style={{fontFamily:"Libre Baskerville"}}
               >
                 {valor.texto}
               </p>
@@ -440,14 +439,14 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
 </div>
         <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-5 ">
           <div className="p-6">
-              <h2 
+              <p 
                 className="text-xl font-bold mb-4 text-center"
-                style={{fontFamily:"Libre Baskerville", fontSize:'18px', lineHeight:'1.667'}}
-              >¿Tienes una idea para desarrollar o apoyar un proyecto cultural?</h2>
+                style={{fontFamily:"Libre Baskerville" }}
+              >¿Tienes una idea para desarrollar o apoyar un proyecto cultural?</p>
               <div className="flex justify-center w-full">
                 <button 
-                  className="px-3  bg-[#2A2D7D] hover:bg-gray-100 text-white font-bold rounded-full transition"
-                  style={{fontFamily:'Lato', fontSize:'12px', lineHeight:'2.5'}}
+                  className="px-3 text-base bg-[#2A2D7D] hover:bg-gray-100 hover:text-[#2A2D7D] text-white font-bold rounded-full transition"
+                  style={{fontFamily:'Lato' }}
                 >
                   Hablemos
                 </button>

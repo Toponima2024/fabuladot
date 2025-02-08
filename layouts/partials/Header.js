@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import TwSizeIndicator from "@components/TwSizeIndicator";
 
 const Header = () => {
   // distructuring the main menu from menu object
@@ -34,6 +35,7 @@ const Header = () => {
       <nav className="navbar container px-1 sm:px-8">
         <div className="order-0">
           <Logo />
+          <TwSizeIndicator /> 
         </div>
         <div className="flex items-center space-x-4 xl:space-x-8">
           <div

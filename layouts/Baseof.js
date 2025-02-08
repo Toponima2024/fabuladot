@@ -4,7 +4,6 @@ import Footer from "@partials/Footer";
 import Header from "@partials/Header";
 import Head from "next/head";
 import { useRouter } from "next/router";
-
 const Base = ({
   title,
   meta_title,
