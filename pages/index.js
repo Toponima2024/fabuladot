@@ -222,19 +222,19 @@ const Home = ({
       <div className="mb-5 flex item-center justify-center" >
         <div className="bg-[#2A2D7D]  md:w-[50vw] w-[100%] bg-opacity-1 text-white p-6 rounded-[18px] flex flex-col gap-2"
         >
-          <p className="text-base"
+          <p className="2xl:text-5xl text-base"
               style={{ fontFamily: "Libre Baskerville" }}
           >
             Promover, divulgar y gestionar la cultura.
           </p>
-          <p className="text-base"
+          <p className="2xl:text-5xl text-base"
               style={{ fontFamily: "Libre Baskerville" }}
           >
             Eso es lo que sabemos hacer y lo hacemos muy bien.
           </p>
           <div className="flex justify-center w-full mb-2 mt-2">
             <button
-              className="bg-white hover:bg-gray-100 text-[#2A2D7D]  font-bold rounded-full transition  text-base  px-20 py-2"
+              className="bg-white hover:bg-gray-100 text-[#2A2D7D]  font-bold rounded-full transition 2xl:text-2xl   text-base  px-20 py-2"
               style={{ fontFamily: "Lato"  }}
                     >
                       Hablemos
@@ -245,17 +245,17 @@ const Home = ({
       <div className="flex item-center justify-center" >
         <div className="bg-[#6fac4e]   md:w-[50vw] w-[100%]  bg-opacity-1 text-white text-center p-6 rounded-[18px] "
         >
-        <h6 id="how" className="text-2xl font-bold text-white mt-2 mb-4"
+        <h6 id="how" className="2xl:text-5xl text-2xl font-bold text-white mt-2 mb-4"
           style={{ fontFamily: "Lato",  fontWeight: 'bold' }}
         >
           ¿Cómo lo hacemos?
         </h6>
-        <div className="text-left">
+        <div className="text-left ml-10">
           <ul className="list-disc list-inside flex flex-col items-start">
             {comohacemos.map((item) => (
               <li
                 key={item.id}
-                className="text-sm mb-2"
+                className="2xl:text-2xl text-sm mb-2"
                 style={{ fontFamily: "Libre Baskerville", paddingLeft: '1em', textIndent: '-1.5em', overflowWrap: 'break-word' }}
               >
                 {item.title}
