@@ -433,7 +433,7 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
             <div className="flex flex-col  items-center justify-center mx-auto w-full sm:w-5/6 bg-[#f7f7f7] bg-opacity-1 rounded-[18px] ">
 
                 <h2 
-                    className="text-xl font-bold  text-center"
+                    className="text-xl font-bold  text-center pt-2"
                     id="team"
                     style={{fontFamily:"Lato", fontSize:'32px', lineHeight:'1.2', color:'#2a2d7d'}}
                   >
@@ -491,6 +491,7 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
                 </div>
             </div>
       </SectionBase>
+
       <section className="section">
       <div 
             className="relative w-full   bg-cover bg-center bg-primary p-6"
@@ -501,37 +502,37 @@ style={{backgroundColor: "#2a2d7d", border: "1px solid black", width:'50%', disp
             }}
       >        
 
-<div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-  <div className="p-3">
-    <p 
-      className="text-xl font-bold mb-4 text-center"
-      style={{fontFamily:"Lato"}}
-      id="valores"
-    >
-      Nuestros valores
-    </p>
-    <ul style={{display:'flex', flexDirection:'column' ,alignItems:'center', justifyContent:'center'}}>
-      {
-        valores.map((valor) => (
-          <li key={valor.id} className="flex flex-col items-center mb-1" >
-            <div className="flex min-w-[215px] items-end justify-start">
-              <p 
-                className="text-gray-700 pr-1 text-base"
-                style={{fontFamily:"Libre Baskerville"}}
-              >
-                {valor.texto}
-              </p>
-              <img src={valor.img} alt="Imagen 1" className="w-8 h-8" />
-            </div>
-          </li>
-        ))        
-      }
-    </ul>
-  </div>
-</div>
-        <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-5 ">
-          <div className="p-6">
-              <p 
+        <div className="mb-5 flex item-center justify-center mx-auto  overflow-hidden">
+          <div className="p-4 bg-white   rounded-lg shadow-md md:w-[50vw] w-[100%]">
+            <p 
+              className="text-xl font-bold mb-4 text-center"
+              style={{fontFamily:"Lato"}}
+              id="valores"
+            >
+              Nuestros valores
+            </p>
+            <ul style={{display:'flex', flexDirection:'column' ,alignItems:'center', justifyContent:'center'}}>
+              {
+                valores.map((valor) => (
+                  <li key={valor.id} className="flex flex-col items-center mb-1" >
+                    <div className="flex min-w-[215px] items-end justify-start">
+                      <p 
+                        className="text-gray-700 pr-1 text-base"
+                        style={{fontFamily:"Libre Baskerville"}}
+                      >
+                        {valor.texto}
+                      </p>
+                      <img src={valor.img} alt="Imagen 1" className="w-8 h-8" />
+                    </div>
+                  </li>
+                ))        
+              }
+            </ul>
+          </div>
+        </div>
+        <div className="mb-5 flex item-center justify-center mx-auto  overflow-hidden">
+        <div className="p-6 container bg-white   rounded-lg shadow-md md:w-[50vw] w-[100%]">
+          <p 
                 className="text-xl font-bold mb-4 text-center"
                 style={{fontFamily:"Libre Baskerville" }}
               >¿Tienes una idea para desarrollar o apoyar un proyecto cultural?</p>
